@@ -35,7 +35,7 @@ def main():
             db.insert({
                 'title': article_title,
                 'url': article_url,
-                'release_date': article_release_date,
+                'release_date': article_release_date/1_000,
                 'content': article_content
             })
 
