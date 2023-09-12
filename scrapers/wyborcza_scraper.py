@@ -19,10 +19,11 @@ PAGES_TO_SCRAPE = 606
 
 # Wyborcza login details
 EMAIL = 'gstark0@icloud.com'
+PASSWORD = ''
 
 def main():
     # Sign in to Wyborcza.pl
-    driver = webdriver.Chrome()
+    driver = webdriver.Safari()
     driver.get('https://login.wyborcza.pl/')
     driver.find_element(By.CSS_SELECTOR, 'input[type=text]').send_keys(EMAIL)
     driver.find_element(By.CSS_SELECTOR, 'input[type=password]').send_keys(PASSWORD)
@@ -58,6 +59,8 @@ def main():
                 'release_date': dtime,
                 'content': content
             })
+
+        print('Page %s scraped' % (i+1))
 
 if __name__ == '__main__':
     main()

@@ -6,7 +6,7 @@ from tinydb import TinyDB, Query
 
 db = TinyDB('./data/tvpinfo.json')
 
-MAIN_URL = 'https://www.tvp.info'
+MAIN_URL = 'http://www.tvp.info'
 PAGES_TO_SCRAPE = 3000
 
 def main():
@@ -38,6 +38,7 @@ def main():
                 'release_date': article_release_date/1_000,
                 'content': article_content
             })
+        print('Page %s scraped' % (i+1))
 
 if __name__ == '__main__':
     main()
